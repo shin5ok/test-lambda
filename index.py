@@ -11,5 +11,5 @@ def handler(event, context):
     }
     return {'statusCode': 200,
             'body': json.dumps(data),
-            'env': json.dumps(os.environ),
+            'env': json.dumps(os.environ.__dict__),
             'headers': {'Content-Type': 'application/json'}}
