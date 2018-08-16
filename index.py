@@ -1,9 +1,11 @@
 import json
 import datetime
+import os
 
 
 def handler(event, context):
     data = {
+        'ip': os.environ.get('REMOTE_ADDR', "None"),
         'output': 'Hello World!!',
         'timestamp': datetime.datetime.utcnow().isoformat()
     }
